@@ -1,10 +1,23 @@
 package com.epam.test.automation.java.practice7;
 
-/**
- * <summary>
- * Implement class according to description of task.
- * </summary>
- */
-public class LongDeposit {
-    //TODO: Delete this line and write your own solution;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+public class LongDeposit extends Deposit{
+
+    private static final BigDecimal PERCENT =  BigDecimal.valueOf(0.15);
+
+    public LongDeposit(BigDecimal amount, Integer period) {
+        super(amount, period);
+    }
+
+    @Override
+    BigDecimal income() {
+        var income = amount;
+        for (var i = 6; i < period; i++) {
+            income = income.add(income.multiply(PERCENT));
+        }
+        return income.setScale(2, RoundingMode.UP);
+    }
 }

@@ -17,9 +17,10 @@ public class BaseDeposit extends Deposit {
 
         var income = amount;
         for (var i = 0; i < period; i++) {
-            income = income.add(income.multiply(PERCENT));
+            income = income.add(income.multiply(PERCENT).setScale(2, RoundingMode.HALF_EVEN));
         }
-        return income.setScale(2, RoundingMode.DOWN);
+        income = income.subtract(amount);
+        return income;
     }
 
 }

@@ -12,7 +12,7 @@ public class LongDepositTest {
     public void ifCalculateIncomeThenSuccess() {
         //given
         var longDeposit = new LongDeposit(new BigDecimal(1000), 7);
-        var expected = BigDecimal.valueOf(1150.00).setScale(2, RoundingMode.CEILING);
+        var expected = BigDecimal.valueOf(150.00).setScale(2, RoundingMode.CEILING);
         //when
         var income = longDeposit.income();
         //then

@@ -22,7 +22,7 @@ public class ClientTest {
     @Test
     public void ifTotalIncomeThenSuccess() {
         //given
-        var expected =  BigDecimal.valueOf(3337.82).setScale(2, RoundingMode.FLOOR);
+        var expected =  BigDecimal.valueOf(337.82).setScale(2, RoundingMode.FLOOR);
         //when
         var totalIncome= client.totalIncome();
         //then
@@ -32,7 +32,7 @@ public class ClientTest {
     @Test
     public void ifMaxIncomeThenSuccess() {
         //given
-        var expected = BigDecimal.valueOf(1157.62).setScale(2, RoundingMode.CEILING);
+        var expected = BigDecimal.valueOf(157.62).setScale(2, RoundingMode.CEILING);
         //when
         var totalIncome= client.maxIncome();
         //then

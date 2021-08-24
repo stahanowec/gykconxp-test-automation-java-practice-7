@@ -16,7 +16,7 @@ public class SpecialDeposit extends Deposit {
         var income = amount;
         var incomePercent = PERCENT;
         for (var i = 0; i < period; i++) {
-            income = income.add(income.multiply(incomePercent).setScale(2, RoundingMode.DOWN));
+            income = income.add(income.multiply(incomePercent).setScale(2, RoundingMode.HALF_EVEN));
             incomePercent = incomePercent.add(PERCENT);
         }
         income = income.subtract(amount);

@@ -11,8 +11,8 @@ public class SpecialDepositTest {
     @Test
     public void ifCalculateIncomeThenSuccess() {
         //given
-        var specialDeposit = new SpecialDeposit(new BigDecimal(1000), 2);
-        var expected = BigDecimal.valueOf(30.20).setScale(2, RoundingMode.FLOOR);
+        var specialDeposit = new SpecialDeposit(new BigDecimal(3000), 6);
+        var expected = BigDecimal.valueOf(684.75).setScale(2, RoundingMode.FLOOR);
         //when
         var income = specialDeposit.income();
         //then

@@ -16,7 +16,7 @@ public class LongDeposit extends Deposit{
     BigDecimal income() {
         var income = amount;
         for (var i = 6; i < period; i++) {
-            income = income.add(income.multiply(PERCENT).setScale(2, RoundingMode.UP));
+            income = income.add(income.multiply(PERCENT).setScale(2, RoundingMode.HALF_EVEN));
         }
         income = income.subtract(amount);
         return income;
